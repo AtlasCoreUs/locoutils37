@@ -1,0 +1,54 @@
+═══════════════════════════════════════════════════════════════
+  LOCOUTILS — SITE COMPLET — GUIDE DE DÉPLOIEMENT
+═══════════════════════════════════════════════════════════════
+
+Ce dossier = TON SITE ENTIER.
+  • Ta page d'accueil d'origine (index.html) — INTACTE
+  • Ton nouveau catalogue premium 22 fiches — dans /catalogue/
+  • Tes fonctions Stripe (netlify/functions/) — INCHANGÉES
+  • config.js, build-config.js, netlify.toml, supabase-setup.sql — INCHANGÉS
+  • node_modules/stripe — ajouté pour que le paiement marche même
+    en glisser-déposer
+
+Le bouton "Catalogue" de ta home pointe maintenant vers /catalogue/.
+
+───────────────────────────────────────────────────────────────
+  OPTION A — GLISSER-DÉPOSER (le plus rapide, ~3 min)
+───────────────────────────────────────────────────────────────
+1. Ouvre config.js et colle tes 2 valeurs Supabase
+   (Supabase → Project Settings → API → "Project URL" + "anon public").
+   → Nécessaire pour que le calendrier affiche les dates réservées.
+
+2. Va sur app.netlify.com → ton site LocOutils → onglet "Deploys".
+
+3. Fais glisser CE DOSSIER ENTIER (avec node_modules) dans la zone
+   "Drag and drop your site output folder here".
+   ⚠️ Glisse le DOSSIER complet, pas seulement quelques fichiers,
+      sinon config.js et les fonctions Stripe disparaissent.
+
+4. Attends la fin du déploiement. C'est en ligne.
+
+   Tes variables d'environnement Netlify (STRIPE_SECRET_KEY, etc.)
+   sont déjà en place côté serveur : le paiement fonctionne.
+
+───────────────────────────────────────────────────────────────
+  OPTION B — GITHUB (recommandé sur le long terme)
+───────────────────────────────────────────────────────────────
+Ici, PAS besoin de toucher config.js : le build Netlify le remplit
+tout seul à partir de tes variables d'environnement.
+
+1. Sur github.com → crée/ouvre le repo AtlasCoreUs/LocOutils37.
+2. "Add file" → "Upload files" → glisse TOUT le contenu de ce dossier
+   SAUF node_modules (GitHub le régénère au build).
+3. Commit.
+4. Netlify rebuild automatiquement (il lance "node build-config.js"
+   et installe stripe). En ligne en 1–2 min.
+
+───────────────────────────────────────────────────────────────
+  IMPORTANT
+───────────────────────────────────────────────────────────────
+• AUCUNE modification de ta base Supabase n'est requise.
+  Les 22 identifiants d'outils du catalogue correspondent déjà à
+  ceux de ta fonction create-checkout et de ta base.
+• En ouvrant les fichiers en local (double-clic), la réservation ne
+  marche pas : il faut l'environnement Netlify. C'est normal.

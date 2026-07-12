@@ -1,0 +1,23 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+  command = "node build-config.js"
+
+[functions]
+  node_bundler = "esbuild"
+
+# La clé anon Supabase est publique par design (row-level security active).
+# On autorise sa présence dans le config.js généré au build.
+[build.environment]
+  SECRETS_SCAN_OMIT_PATHS = "config.js"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"

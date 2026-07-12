@@ -1,0 +1,8 @@
+{
+  "name": "locoutils-tours",
+  "version": "1.0.0",
+  "description": "LocOutils — Location d'outils à Tours",
+  "dependencies": {
+    "stripe": "^17.7.0"
+  }
+}

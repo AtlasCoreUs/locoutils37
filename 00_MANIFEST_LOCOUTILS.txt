@@ -1,0 +1,175 @@
+Structure du dossier pour le volume Windows
+Le numéro de série du volume est 00000094 E45B:8B8A
+C:.
+|   00_MANIFEST_LOCOUTILS.txt
+|   build-config.js
+|   config.js
+|   index.html
+|   mentions-legales.html
+|   merci.html
+|   netlify.toml
+|   package-lock.json
+|   package.json
+|   supabase-setup.sql
+|   _DEPLOIEMENT.txt
+|   
++---catalogue
+|   |   index.html
+|   |   
+|   +---fiches
+|   |       aspirateur-eau-et-poussieres-karcher-wd-6-p.html
+|   |       clavier-arrangeur-casio-wk-1800.html
+|   |       coffret-scies-cloches.html
+|   |       compresseur-mecafer-avec-flexible-et-coffret.html
+|   |       defonceuse-ryobi-bleue.html
+|   |       enrouleur-electrique-de-chantier.html
+|   |       etau-d-etabli.html
+|   |       jeu-de-cles-mixtes.html
+|   |       lot-de-serre-joints-presses-de-serrage.html
+|   |       marteau-perforateur-makita-sds.html
+|   |       marteau-perforateur-worx-sds.html
+|   |       meuleuse-d-angle-en-mallette.html
+|   |       outil-multifonction-fein.html
+|   |       perceuse-visseuse-sans-fil-hikoki-hitachi.html
+|   |       ponceuse-a-bande-rouge.html
+|   |       ponceuse-excentrique-bosch-pex.html
+|   |       poste-a-souder-bleu.html
+|   |       rabot-electrique-bosch.html
+|   |       robot-patissier-vintage-orange-avec-bol-inox.html
+|   |       scie-a-onglets-evolution.html
+|   |       scie-sabre-aeg-filaire.html
+|   |       scie-sauteuse-makita-en-coffret.html
+|   |       
+|   \---images
+|       \---p
+|           |   aspirateur-eau-et-poussieres-karcher-wd-6-p-1.jpg
+|           |   aspirateur-eau-et-poussieres-karcher-wd-6-p-2.jpg
+|           |   clavier-arrangeur-casio-wk-1800-1.jpg
+|           |   clavier-arrangeur-casio-wk-1800-2.jpg
+|           |   clavier-arrangeur-casio-wk-1800-3.jpg
+|           |   coffret-scies-cloches-1.jpg
+|           |   coffret-scies-cloches-2.jpg
+|           |   compresseur-mecafer-avec-flexible-et-coffret-1.jpg
+|           |   defonceuse-ryobi-bleue-1.jpg
+|           |   defonceuse-ryobi-bleue-2.jpg
+|           |   enrouleur-electrique-de-chantier-1.jpg
+|           |   enrouleur-electrique-de-chantier-2.jpg
+|           |   etau-d-etabli-1.jpg
+|           |   etau-d-etabli-2.jpg
+|           |   jeu-de-cles-mixtes-1.jpg
+|           |   jeu-de-cles-mixtes-2.jpg
+|           |   lot-de-serre-joints-presses-de-serrage-1.jpg
+|           |   lot-de-serre-joints-presses-de-serrage-2.jpg
+|           |   marteau-perforateur-makita-sds-1.jpg
+|           |   marteau-perforateur-makita-sds-2.jpg
+|           |   marteau-perforateur-worx-sds-1.jpg
+|           |   marteau-perforateur-worx-sds-2.jpg
+|           |   meuleuse-d-angle-en-mallette-1.jpg
+|           |   outil-multifonction-fein-1.jpg
+|           |   perceuse-visseuse-sans-fil-hikoki-hitachi-1.jpg
+|           |   perceuse-visseuse-sans-fil-hikoki-hitachi-2.jpg
+|           |   ponceuse-a-bande-rouge-1.jpg
+|           |   ponceuse-a-bande-rouge-2.jpg
+|           |   ponceuse-excentrique-bosch-pex-1.jpg
+|           |   ponceuse-excentrique-bosch-pex-2.jpg
+|           |   ponceuse-excentrique-bosch-pex-3.jpg
+|           |   poste-a-souder-bleu-1.jpg
+|           |   poste-a-souder-bleu-2.jpg
+|           |   rabot-electrique-bosch-1.jpg
+|           |   rabot-electrique-bosch-2.jpg
+|           |   rabot-electrique-bosch-3.jpg
+|           |   robot-patissier-vintage-orange-avec-bol-inox-1.jpg
+|           |   robot-patissier-vintage-orange-avec-bol-inox-2.jpg
+|           |   robot-patissier-vintage-orange-avec-bol-inox-3.jpg
+|           |   scie-a-onglets-evolution-1.jpg
+|           |   scie-a-onglets-evolution-2.jpg
+|           |   scie-sabre-aeg-filaire-1.jpg
+|           |   scie-sabre-aeg-filaire-2.jpg
+|           |   scie-sauteuse-makita-en-coffret-1.jpg
+|           |   scie-sauteuse-makita-en-coffret-2.jpg
+|           |   
+|           \---thumb
+|                   aspirateur-eau-et-poussieres-karcher-wd-6-p.jpg
+|                   clavier-arrangeur-casio-wk-1800.jpg
+|                   coffret-scies-cloches.jpg
+|                   compresseur-mecafer-avec-flexible-et-coffret.jpg
+|                   defonceuse-ryobi-bleue.jpg
+|                   enrouleur-electrique-de-chantier.jpg
+|                   etau-d-etabli.jpg
+|                   jeu-de-cles-mixtes.jpg
+|                   lot-de-serre-joints-presses-de-serrage.jpg
+|                   marteau-perforateur-makita-sds.jpg
+|                   marteau-perforateur-worx-sds.jpg
+|                   meuleuse-d-angle-en-mallette.jpg
+|                   outil-multifonction-fein.jpg
+|                   perceuse-visseuse-sans-fil-hikoki-hitachi.jpg
+|                   ponceuse-a-bande-rouge.jpg
+|                   ponceuse-excentrique-bosch-pex.jpg
+|                   poste-a-souder-bleu.jpg
+|                   rabot-electrique-bosch.jpg
+|                   robot-patissier-vintage-orange-avec-bol-inox.jpg
+|                   scie-a-onglets-evolution.jpg
+|                   scie-sabre-aeg-filaire.jpg
+|                   scie-sauteuse-makita-en-coffret.jpg
+|                   
++---images
+|   |   clavier-casio-2.jpg
+|   |   clavier-casio.jpg
+|   |   cles.jpg
+|   |   compresseur.jpg
+|   |   defonceuse.jpg
+|   |   devidoir.jpg
+|   |   etau.jpg
+|   |   karcher-2.jpg
+|   |   karcher.jpg
+|   |   meuleuse.jpg
+|   |   multi-fein.jpg
+|   |   perceuse-hitachi.jpg
+|   |   perfo-makita.jpg
+|   |   perfo-worx.jpg
+|   |   ponceuse-bande-2.jpg
+|   |   ponceuse-bande.jpg
+|   |   ponceuse-bosch.jpg
+|   |   poste-souder.jpg
+|   |   rabot-bosch.jpg
+|   |   robot-klarstein-2.jpg
+|   |   robot-klarstein.jpg
+|   |   scie-onglets.jpg
+|   |   scie-sabre.jpg
+|   |   scie-sauteuse.jpg
+|   |   scies-cloches.jpg
+|   |   serre-joints.jpg
+|   |   
+|   \---thumb
+|           clavier-casio-2.jpg
+|           clavier-casio.jpg
+|           cles.jpg
+|           compresseur.jpg
+|           defonceuse.jpg
+|           devidoir.jpg
+|           etau.jpg
+|           karcher-2.jpg
+|           karcher.jpg
+|           meuleuse.jpg
+|           multi-fein.jpg
+|           perceuse-hitachi.jpg
+|           perfo-makita.jpg
+|           perfo-worx.jpg
+|           ponceuse-bande-2.jpg
+|           ponceuse-bande.jpg
+|           ponceuse-bosch.jpg
+|           poste-souder.jpg
+|           rabot-bosch.jpg
+|           robot-klarstein-2.jpg
+|           robot-klarstein.jpg
+|           scie-onglets.jpg
+|           scie-sabre.jpg
+|           scie-sauteuse.jpg
+|           scies-cloches.jpg
+|           serre-joints.jpg
+|           
+\---netlify
+    \---functions
+            create-checkout.js
+            stripe-webhook.js
+            
