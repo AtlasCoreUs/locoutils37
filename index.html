@@ -9,8 +9,6 @@
 <meta property="og:description" content="22 outils pro à louer à Tours. Réservation en ligne, retrait 2h, paiement sécurisé.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="/config.js"></script>
 <style>
 :root{
   --orange:#FF6B00;--orange-dark:#E55A00;--orange-light:#FFF4EC;
@@ -332,7 +330,7 @@ footer{background:#0A0F18;color:#94A3B8}
 
 <nav>
   <div class="nav-in">
-    <a href="#" class="logo">
+    <a href="catalogue/" class="logo">
       <div class="logo-badge">🔧</div>
       <div class="logo-txt"><b>LocOutils</b><span>Pro · Tours</span></div>
     </a>
@@ -344,9 +342,8 @@ footer{background:#0A0F18;color:#94A3B8}
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-actions">
-      <button class="btn btn-auth" id="navAuth" onclick="authClick()">Connexion</button>
       <a href="catalogue/" class="btn btn-orange">Réserver</a>
-      <button class="burger" id="burger"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
@@ -355,7 +352,6 @@ footer{background:#0A0F18;color:#94A3B8}
   <a href="#categories" onclick="closeMob()">📂 Catégories</a>
   <a href="#how" onclick="closeMob()">📋 Comment ça marche</a>
   <a href="#faq" onclick="closeMob()">❓ FAQ</a>
-  <a href="#" onclick="closeMob();authClick();return false" id="mobAuth">👤 Connexion</a>
   <a href="tel:+33744802699" onclick="closeMob()" style="color:var(--orange)">📞 07 44 80 26 99</a>
 </div>
 
@@ -376,7 +372,28 @@ footer{background:#0A0F18;color:#94A3B8}
           <div class="t"><span class="ic">✓</span> Caution remboursée</div>
         </div>
       </div>
-      <div class="hero-visual" id="heroVisual"></div>
+      <div class="hero-visual" id="heroVisual">
+        <a href="catalogue/fiches/perceuse-visseuse-sans-fil-hikoki-hitachi.html" class="hv-card big" style="grid-column:1;grid-row:1/3">
+          <img src="images/p/thumb/perceuse-visseuse-sans-fil-hikoki-hitachi.jpg" alt="Perceuse-visseuse Hitachi 18V" loading="eager">
+          <span class="hv-tag">Perçage</span>
+          <div class="hv-info"><span class="b">Perceuse-visseuse</span><span class="n">Hitachi 18V</span><span class="p"><b>9€</b>/jour</span></div>
+        </a>
+        <a href="catalogue/fiches/scie-a-onglets-evolution.html" class="hv-card" style="grid-column:2;grid-row:1">
+          <img src="images/p/thumb/scie-a-onglets-evolution.jpg" alt="Scie à onglets Evolution" loading="eager">
+          <span class="hv-tag">Découpe</span>
+          <div class="hv-info"><span class="b">Scie à onglets</span><span class="n">Evolution</span><span class="p"><b>18€</b>/jour</span></div>
+        </a>
+        <a href="catalogue/fiches/ponceuse-excentrique-bosch-pex.html" class="hv-card" style="grid-column:2;grid-row:2">
+          <img src="images/p/thumb/ponceuse-excentrique-bosch-pex.jpg" alt="Ponceuse excentrique Bosch PEX 300 AE" loading="eager">
+          <span class="hv-tag">Ponçage</span>
+          <div class="hv-info"><span class="b">Ponceuse excentrique</span><span class="n">Bosch PEX 300 AE</span><span class="p"><b>8€</b>/jour</span></div>
+        </a>
+        <a href="catalogue/fiches/compresseur-mecafer-avec-flexible-et-coffret.html" class="hv-card" style="grid-column:1;grid-row:3">
+          <img src="images/p/thumb/compresseur-mecafer-avec-flexible-et-coffret.jpg" alt="Compresseur Mecafer Twenty 24L" loading="eager">
+          <span class="hv-tag">Chantier</span>
+          <div class="hv-info"><span class="b">Compresseur</span><span class="n">Mecafer 24L</span><span class="p"><b>18€</b>/jour</span></div>
+        </a>
+      </div>
     </div>
   </div>
 </header>
@@ -594,5 +611,51 @@ footer{background:#0A0F18;color:#94A3B8}
 
 <a class="wa" href="https://wa.me/33744802699?text=Bonjour%2C%20je%20voudrais%20louer%20un%20outil%20chez%20LocOutils" target="_blank" title="WhatsApp">💬</a>
 
+<script>
+(function(){
+  'use strict';
+
+  // Mobile menu
+  var burger = document.getElementById('burger');
+  var mob = document.getElementById('mob');
+  function closeMob(){
+    if(mob) mob.classList.remove('open');
+    if(burger) burger.setAttribute('aria-expanded', 'false');
+  }
+  function openMob(){
+    if(mob) mob.classList.add('open');
+    if(burger) burger.setAttribute('aria-expanded', 'true');
+  }
+  if(burger && mob){
+    burger.addEventListener('click', function(e){
+      e.stopPropagation();
+      if(mob.classList.contains('open')){
+        closeMob();
+      }else{
+        openMob();
+      }
+    });
+    document.addEventListener('click', function(e){
+      if(mob.classList.contains('open') && !mob.contains(e.target) && e.target !== burger){
+        closeMob();
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && mob.classList.contains('open')){
+        closeMob();
+      }
+    });
+  }
+
+  // filterTo: redirect to catalogue with category filter
+  window.filterTo = function(cat){
+    var valid = ['percage','decoupe','poncage','chantier','outils-main','maison'];
+    if(valid.indexOf(cat) !== -1){
+      window.location.href = 'catalogue/index.html?cat=' + cat;
+    }
+  };
+
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue complet — LocOutils Tours</title>
+<meta name="description" content="22 outils pro à louer à Tours. Perçage, découpe, ponçage, chantier, outils à main, maison. Réservation en ligne, retrait 2h, caution remboursée.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#FF6B00;--orange-dark:#E55A00;--orange-light:#FFF4EC;
+  --ink:#0E1420;--ink-2:#161E2E;--ink-3:#1F2A3C;
+  --cream:#F5F1EA;--cream-2:#FAF7F2;
+  --text:#1E293B;--text-soft:#64748B;--text-mute:#94A3B8;
+  --green:#10B981;--red:#EF4444;--amber:#F59E0B;
+  --line:#E8DFD0;--line-dark:rgba(255,255,255,.08);
+  --sh-lg:0 20px 50px rgba(0,0,0,.12);--r:16px;--r-lg:22px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--cream-2);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Bebas Neue',sans-serif;letter-spacing:.5px;line-height:1;font-weight:400}
+.wrap{max-width:1220px;margin:0 auto;padding:0 24px}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:11px;font-weight:700;font-size:14px;cursor:pointer;border:none;font-family:inherit;transition:all .2s;white-space:nowrap}
+.btn-orange{background:var(--orange);color:#fff;box-shadow:0 6px 18px rgba(255,107,0,.3)}
+.btn-orange:hover{background:var(--orange-dark);transform:translateY(-2px)}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--ink-3)}
+.topbar{background:var(--cream);border-bottom:1px solid var(--line);font-size:12.5px;color:var(--text-soft)}
+.topbar-in{display:flex;justify-content:space-between;align-items:center;padding:9px 24px;max-width:1220px;margin:0 auto}
+.topbar a{color:var(--text-soft)}
+.topbar .l,.topbar .r{display:flex;gap:18px;align-items:center}
+nav{position:sticky;top:0;z-index:200;background:var(--ink);border-bottom:1px solid var(--line-dark)}
+.nav-in{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;max-width:1220px;margin:0 auto}
+.logo{display:flex;align-items:center;gap:11px}
+.logo-badge{width:42px;height:42px;background:var(--orange);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 14px rgba(255,107,0,.35)}
+.logo-txt b{color:#fff;font-weight:800;font-size:18px;display:block;line-height:1.1}
+.logo-txt span{color:var(--text-mute);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{color:#CBD5E1;font-weight:600;font-size:14px;transition:color .2s}
+.nav-links a:hover{color:var(--orange)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.btn-auth{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15);padding:11px 18px}
+.btn-auth:hover{background:rgba(255,255,255,.15)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:#fff;display:block}
+.mob{display:none;position:fixed;inset:66px 0 auto 0;background:var(--ink-2);border-bottom:1px solid var(--line-dark);padding:16px 24px;z-index:199;flex-direction:column}
+.mob.open{display:flex}
+.mob a{color:#CBD5E1;font-weight:600;font-size:16px;padding:12px 0;border-bottom:1px solid var(--line-dark)}
+
+.sec-head{text-align:center;max-width:640px;margin:0 auto 40px}
+.sec-tag{display:inline-block;color:var(--orange);font-weight:800;font-size:11.5px;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.sec-head h2{font-size:52px;color:var(--ink);margin-bottom:12px}
+.sec-head p{font-size:16px;color:var(--text-soft)}
+
+.cat-head-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:24px;flex-wrap:wrap;gap:16px}
+.cat-head-row h2{font-size:44px;color:var(--ink)}
+.cat-head-row p{color:var(--text-soft);font-size:15px;margin-top:6px}
+
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px}
+.fbtn{padding:9px 18px;border-radius:100px;border:1.5px solid var(--line);background:#fff;font-weight:600;font-size:13px;color:var(--text-soft);cursor:pointer;font-family:inherit;transition:all .2s}
+.fbtn:hover{border-color:var(--orange);color:var(--orange)}
+.fbtn.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.fbtn:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:all .3s;display:flex;flex-direction:column}
+.tcard:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
+.tcard-img{height:180px;background:var(--cream);position:relative;overflow:hidden}
+.tcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .35s;aspect-ratio:4/3}
+.tcard:hover .tcard-img img{transform:scale(1.06)}
+.badge-pop{position:absolute;top:11px;left:11px;background:var(--orange);color:#fff;padding:4px 11px;border-radius:100px;font-size:10.5px;font-weight:700}
+.tcard-body{padding:16px;display:flex;flex-direction:column;flex:1}
+.tcard-top{display:flex;justify-content:space-between;margin-bottom:3px}
+.tcard-brand{font-size:10.5px;color:var(--text-mute);font-weight:700;text-transform:uppercase}
+.tcard-rate{font-size:12px;color:var(--amber);font-weight:700}
+.tcard-name{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.25}
+.tcard-use{font-size:12px;color:var(--text-soft);line-height:1.45;margin-bottom:13px;flex:1}
+.tcard-foot{display:flex;justify-content:space-between;align-items:flex-end;padding-top:13px;border-top:1px solid var(--cream);margin-top:auto}
+.tcard-price .amt{font-family:'Bebas Neue';font-size:32px;color:var(--orange);line-height:.9}
+.tcard-price .u{font-size:12px;color:var(--text-soft)}
+.tcard-price .from{font-size:11px;color:var(--text-mute);margin-top:2px}
+.tcard-cta{background:var(--ink);color:#fff;padding:9px 15px;border-radius:9px;font-size:12.5px;font-weight:700;border:none;cursor:pointer;font-family:inherit;transition:all .2s}
+.tcard:hover .tcard-cta{background:var(--orange)}
+.tcard-caution{font-size:10.5px;color:var(--text-mute);margin-top:6px}
+.tcard.hidden{display:none!important}
+
+.results-count{margin-bottom:16px;font-size:14px;color:var(--text-soft)}
+.results-count b{color:var(--ink)}
+
+footer{background:#0A0F18;color:#94A3B8;margin-top:60px}
+.foot-trust{border-bottom:1px solid var(--line-dark);padding:34px 0}
+.foot-trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.ft{display:flex;gap:14px}
+.ft-ic{width:40px;height:40px;border-radius:11px;background:rgba(255,107,0,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ft b{color:#fff;font-size:14px;display:block;margin-bottom:2px}
+.ft span{font-size:12.5px;color:#64748B}
+.foot-main{padding:52px 0 0}
+.foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+.foot-brand p{font-size:13px;line-height:1.6;max-width:250px;margin:14px 0 16px}
+.foot-contact div{font-size:13px;margin-bottom:7px}
+.foot-col h5{color:#fff;font-size:14px;font-weight:700;margin-bottom:15px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-col ul a{font-size:13px;color:#94A3B8;transition:color .2s}
+.foot-col ul a:hover{color:var(--orange)}
+.foot-pay{border-top:1px solid var(--line-dark);padding:22px 0;display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap}
+.pay-logos{display:flex;gap:8px}
+.pay-logos span{padding:5px 11px;border-radius:5px;font-size:11px;font-weight:700}
+.foot-badges{display:flex;gap:16px;flex-wrap:wrap}
+.foot-badges span{font-size:12px;color:#64748B}
+.foot-bottom{border-top:1px solid var(--line-dark);padding:20px 0;text-align:center;font-size:12px;color:#475569;line-height:1.7}
+
+@media(max-width:1024px){
+  .tools{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr 1fr}
+  .foot-trust-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .topbar{display:none}
+  .nav-links{display:none}
+  .nav-actions .btn-orange{display:none}
+  .burger{display:flex}
+  .sec-head h2,.cat-head-row h2{font-size:36px}
+  .tools{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .filters{justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="l">
+      <a href="tel:+33744802699">📞 07 44 80 26 99</a><span>·</span>
+      <span>Remise & retour à Tours et agglomération</span>
+    </div>
+    <div class="r">
+      <span>Lun–Sam 8h–21h · Dim 10h–19h</span><span>·</span>
+      <a href="mailto:locoutils37@gmail.com">✉️ Contact</a>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-in">
+    <a href="../index.html" class="logo">
+      <div class="logo-badge">🔧</div>
+      <div class="logo-txt"><b>LocOutils</b><span>Pro · Tours</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="../index.html">Accueil</a>
+      <a href="../index.html#categories">Catégories</a>
+      <a href="../index.html#how">Comment ça marche</a>
+      <a href="../index.html#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <a href="../index.html" class="btn btn-orange">← Retour accueil</a>
+      <button class="burger" id="burger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mob" id="mob">
+  <a href="../index.html" onclick="closeMob()">← Retour accueil</a>
+  <a href="../index.html#categories" onclick="closeMob()">📂 Catégories</a>
+  <a href="../index.html#how" onclick="closeMob()">📋 Comment ça marche</a>
+  <a href="../index.html#faq" onclick="closeMob()">❓ FAQ</a>
+  <a href="tel:+33744802699" onclick="closeMob()" style="color:var(--orange)">📞 07 44 80 26 99</a>
+</div>
+
+<main class="wrap" style="padding:40px 24px 80px">
+  <div class="sec-head">
+    <span class="sec-tag">Catalogue complet</span>
+    <h2>Nos 22 outils</h2>
+    <p>Matériel pro vérifié. Spécifications exactes. Réservation + paiement en ligne. Retrait rapide.</p>
+  </div>
+
+  <div class="cat-head-row">
+    <div>
+      <h2>Filtrer par catégorie</h2>
+      <p>Cliquez sur une catégorie pour afficher les outils correspondants</p>
+    </div>
+  </div>
+
+  <div class="filters" id="catFilters" role="group" aria-label="Filtrer les outils par catégorie">
+    <button class="fbtn active" data-cat="all" role="tab" aria-selected="true">Tous <span class="count" data-cat="all">(22)</span></button>
+    <button class="fbtn" data-cat="percage" role="tab" aria-selected="false">Perçage <span class="count" data-cat="percage">(3)</span></button>
+    <button class="fbtn" data-cat="decoupe" role="tab" aria-selected="false">Découpe <span class="count" data-cat="decoupe">(4)</span></button>
+    <button class="fbtn" data-cat="poncage" role="tab" aria-selected="false">Ponçage <span class="count" data-cat="poncage">(5)</span></button>
+    <button class="fbtn" data-cat="chantier" role="tab" aria-selected="false">Chantier <span class="count" data-cat="chantier">(4)</span></button>
+    <button class="fbtn" data-cat="outils-main" role="tab" aria-selected="false">Outils à main <span class="count" data-cat="outils-main">(4)</span></button>
+    <button class="fbtn" data-cat="maison" role="tab" aria-selected="false">Maison <span class="count" data-cat="maison">(2)</span></button>
+  </div>
+
+  <div class="results-count" id="resultsCount" aria-live="polite">
+    <b>22</b> outils disponibles
+  </div>
+
+  <div class="tools" id="toolsGrid" role="list">
+    <!-- 1 Perceuse Hitachi -->
+    <article class="tcard" data-cat="percage" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/perceuse-visseuse-sans-fil-hikoki-hitachi.jpg" alt="Perceuse-visseuse Hitachi 18V" width="320" height="240" loading="eager"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Hitachi</span><span class="tcard-rate">⭐ 4.9</span></div>
+        <h3 class="tcard-name">Perceuse-visseuse Hitachi 18V</h3>
+        <p class="tcard-use">Perce le bois et le métal, visse et monte des meubles sans fil. 2 batteries + chargeur.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">9€</span><span class="u">/ jour</span><div class="from">Caution 60€</div></div>
+          <a href="fiches/perceuse-visseuse-sans-fil-hikoki-hitachi.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 2 Perforateur Makita -->
+    <article class="tcard" data-cat="percage" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/marteau-perforateur-makita-sds.jpg" alt="Perforateur SDS Makita HR2470" width="320" height="240" loading="eager"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Makita</span><span class="tcard-rate">⭐ 4.8</span></div>
+        <h3 class="tcard-name">Perforateur SDS Makita HR2470</h3>
+        <p class="tcard-use">Perçage béton, burinage, mode rotation seul. Puissance 780 W, énergie de frappe 2,4 J.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">15€</span><span class="u">/ jour</span><div class="from">Caution 100€</div></div>
+          <a href="fiches/marteau-perforateur-makita-sds.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 3 Perforateur Worx -->
+    <article class="tcard" data-cat="percage" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/marteau-perforateur-worx-sds.jpg" alt="Perforateur SDS Worx" width="320" height="240" loading="eager"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Worx</span><span class="tcard-rate">⭐ 4.7</span></div>
+        <h3 class="tcard-name">Perforateur SDS Worx</h3>
+        <p class="tcard-use">Perçage béton et burinage léger. SDS-Plus, 650 W, 2,2 J. Idéal rénovation.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">12€</span><span class="u">/ jour</span><div class="from">Caution 80€</div></div>
+          <a href="fiches/marteau-perforateur-worx-sds.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 4 Scie à onglets -->
+    <article class="tcard" data-cat="decoupe" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/scie-a-onglets-evolution.jpg" alt="Scie à onglets Evolution" width="320" height="240" loading="eager"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Evolution</span><span class="tcard-rate">⭐ 4.8</span></div>
+        <h3 class="tcard-name">Scie à onglets Evolution</h3>
+        <p class="tcard-use">Coupe bois, métal, plastique, composite. Lame multi-matériaux 255 mm incluse. Précision pro.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">18€</span><span class="u">/ jour</span><div class="from">Caution 120€</div></div>
+          <a href="fiches/scie-a-onglets-evolution.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 5 Scie sauteuse -->
+    <article class="tcard" data-cat="decoupe" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/scie-sauteuse-makita-en-coffret.jpg" alt="Scie sauteuse Makita" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Makita</span><span class="tcard-rate">⭐ 4.9</span></div>
+        <h3 class="tcard-name">Scie sauteuse Makita</h3>
+        <p class="tcard-use">Coupes courbes et droites bois, métal, stratifié. Pendulaire 3 positions, variateur vitesse.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">9€</span><span class="u">/ jour</span><div class="from">Caution 50€</div></div>
+          <a href="fiches/scie-sauteuse-makita-en-coffret.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 6 Scie sabre -->
+    <article class="tcard" data-cat="decoupe" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/scie-sabre-aeg-filaire.jpg" alt="Scie sabre AEG" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">AEG</span><span class="tcard-rate">⭐ 4.7</span></div>
+        <h3 class="tcard-name">Scie sabre AEG</h3>
+        <p class="tcard-use">Démolition, coupe tubes, bois avec clous. 1100 W, course 28 mm, changement lame sans outil.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">10€</span><span class="u">/ jour</span><div class="from">Caution 60€</div></div>
+          <a href="fiches/scie-sabre-aeg-filaire.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 7 Scies cloches -->
+    <article class="tcard" data-cat="decoupe" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/coffret-scies-cloches.jpg" alt="Coffret scies-cloches bimétal" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Bimétal</span><span class="tcard-rate">⭐ 4.6</span></div>
+        <h3 class="tcard-name">Coffret scies-cloches bimétal</h3>
+        <p class="tcard-use">Perçage grands trous ronds bois, plâtre, PVC. Mandrins + forets centreurs inclus. Multi-diamètres.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">6€</span><span class="u">/ jour</span><div class="from">Caution 30€</div></div>
+          <a href="fiches/coffret-scies-cloches.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 8 Ponceuse Bosch -->
+    <article class="tcard" data-cat="poncage" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/ponceuse-excentrique-bosch-pex.jpg" alt="Ponceuse excentrique Bosch PEX 300 AE" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Bosch</span><span class="tcard-rate">⭐ 4.9</span></div>
+        <h3 class="tcard-name">Ponceuse excentrique Bosch PEX 300 AE</h3>
+        <p class="tcard-use">Finition fine surfaces planes. Plateau 125 mm, aspiration intégrée, variateur, 270 W.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">8€</span><span class="u">/ jour</span><div class="from">Caution 50€</div></div>
+          <a href="fiches/ponceuse-excentrique-bosch-pex.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 9 Ponceuse à bande -->
+    <article class="tcard" data-cat="poncage" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/ponceuse-a-bande-rouge.jpg" alt="Ponceuse à bande" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Pro</span><span class="tcard-rate">⭐ 4.7</span></div>
+        <h3 class="tcard-name">Ponceuse à bande</h3>
+        <p class="tcard-use">Dégrossissage rapide, enlèvement matière important. Bande 75×533 mm, 850 W, aspiration.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">8€</span><span class="u">/ jour</span><div class="from">Caution 50€</div></div>
+          <a href="fiches/ponceuse-a-bande-rouge.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 10 Rabot Bosch -->
+    <article class="tcard" data-cat="poncage" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/rabot-electrique-bosch.jpg" alt="Rabot électrique Bosch" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Bosch</span><span class="tcard-rate">⭐ 4.8</span></div>
+        <h3 class="tcard-name">Rabot électrique Bosch</h3>
+        <p class="tcard-use">Rabotage, chanfreinage, dressage bois. Largeur 82 mm, profondeur 0-2,6 mm, 600 W.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">8€</span><span class="u">/ jour</span><div class="from">Caution 50€</div></div>
+          <a href="fiches/rabot-electrique-bosch.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 11 Défonceuse Ryobi -->
+    <article class="tcard" data-cat="poncage" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/defonceuse-ryobi-bleue.jpg" alt="Défonceuse Ryobi 1500 W" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Ryobi</span><span class="tcard-rate">⭐ 4.7</span></div>
+        <h3 class="tcard-name">Défonceuse Ryobi 1500 W</h3>
+        <p class="tcard-use">Rainurage, profilage, mortaisage. Plongeant 0-55 mm, variateur, guide parallèle, fraises incluses.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">15€</span><span class="u">/ jour</span><div class="from">Caution 100€</div></div>
+          <a href="fiches/defonceuse-ryobi-bleue.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 12 Outil multifonction Fein -->
+    <article class="tcard" data-cat="poncage" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/outil-multifonction-fein.jpg" alt="Outil multifonction Fein" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Fein</span><span class="tcard-rate">⭐ 4.9</span></div>
+        <h3 class="tcard-name">Outil multifonction Fein</h3>
+        <p class="tcard-use">Scie, ponce, gratte, coupe. Oscillation 3,2°, 250 W, démarrage progressif, nombreux accessoires.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">12€</span><span class="u">/ jour</span><div class="from">Caution 80€</div></div>
+          <a href="fiches/outil-multifonction-fein.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 13 Compresseur -->
+    <article class="tcard" data-cat="chantier" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/compresseur-mecafer-avec-flexible-et-coffret.jpg" alt="Compresseur Mecafer Twenty 24L" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Mecafer</span><span class="tcard-rate">⭐ 4.8</span></div>
+        <h3 class="tcard-name">Compresseur Mecafer Twenty 24L</h3>
+        <p class="tcard-use">Gonflage, peinture, clouage, nettoyage. 24 L, 1,8 CV, 8 bar, flexible + coffret accessoires.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">18€</span><span class="u">/ jour</span><div class="from">Caution 120€</div></div>
+          <a href="fiches/compresseur-mecafer-avec-flexible-et-coffret.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 14 Poste à souder -->
+    <article class="tcard" data-cat="chantier" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/poste-a-souder-bleu.jpg" alt="Poste à souder" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Pro</span><span class="tcard-rate">⭐ 4.7</span></div>
+        <h3 class="tcard-name">Poste à souder</h3>
+        <p class="tcard-use">Soudure à l'arc MMA, inox, fonte. 160 A, facteur de marche 60%, mallette, accessoires.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">18€</span><span class="u">/ jour</span><div class="from">Caution 100€</div></div>
+          <a href="fiches/poste-a-souder-bleu.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 15 Meuleuse -->
+    <article class="tcard" data-cat="chantier" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/meuleuse-d-angle-en-mallette.jpg" alt="Meuleuse d'angle Titan 115 mm" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Titan</span><span class="tcard-rate">⭐ 4.6</span></div>
+        <h3 class="tcard-name">Meuleuse d'angle Titan 115 mm</h3>
+        <p class="tcard-use">Tronçonnage, ébarbage, ponçage métal. 750 W, 11 000 tr/min, mallette, disques fournis.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">8€</span><span class="u">/ jour</span><div class="from">Caution 50€</div></div>
+          <a href="fiches/meuleuse-d-angle-en-mallette.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 16 Kärcher -->
+    <article class="tcard" data-cat="chantier" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/aspirateur-eau-et-poussieres-karcher-wd-6-p.jpg" alt="Aspirateur Kärcher WD 6 P 30L" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Kärcher</span><span class="tcard-rate">⭐ 4.9</span></div>
+        <h3 class="tcard-name">Aspirateur Kärcher WD 6 P 30L</h3>
+        <p class="tcard-use">Eau et poussières, cuve inox 30 L, 1300 W, prise synchronisée outils, soufflerie, câble 6 m.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">14€</span><span class="u">/ jour</span><div class="from">Caution 100€</div></div>
+          <a href="fiches/aspirateur-eau-et-poussieres-karcher-wd-6-p.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 17 Étau -->
+    <article class="tcard" data-cat="outils-main" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/etau-d-etabli.jpg" alt="Étau d'établi" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Pro</span><span class="tcard-rate">⭐ 4.8</span></div>
+        <h3 class="tcard-name">Étau d'établi</h3>
+        <p class="tcard-use">Maintien pièces usinage, soudure, assemblage. Mâchoires 100 mm, ouverture 120 mm, base tournante.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">4€</span><span class="u">/ jour</span><div class="from">Caution 30€</div></div>
+          <a href="fiches/etau-d-etabli.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 18 Serre-joints -->
+    <article class="tcard" data-cat="outils-main" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/lot-de-serre-joints-presses-de-serrage.jpg" alt="Lot de serre-joints (x5)" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Lot x5</span><span class="tcard-rate">⭐ 4.7</span></div>
+        <h3 class="tcard-name">Lot de serre-joints (x5)</h3>
+        <p class="tcard-use">Serrage collage, assemblage, découpe. Grande ouverture, poignées confort, force régulière.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">4€</span><span class="u">/ jour</span><div class="from">Caution 30€</div></div>
+          <a href="fiches/lot-de-serre-joints-presses-de-serrage.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 19 Clés mixtes -->
+    <article class="tcard" data-cat="outils-main" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/jeu-de-cles-mixtes.jpg" alt="Jeu de clés mixtes" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Pro</span><span class="tcard-rate">⭐ 4.8</span></div>
+        <h3 class="tcard-name">Jeu de clés mixtes</h3>
+        <p class="tcard-use">Clés fourches + polygonales 8-19 mm. Acier chrome vanadium, coffret, norme DIN 3113.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">3€</span><span class="u">/ jour</span><div class="from">Caution 20€</div></div>
+          <a href="fiches/jeu-de-cles-mixtes.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 20 Dévidoir -->
+    <article class="tcard" data-cat="outils-main" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/enrouleur-electrique-de-chantier.jpg" alt="Dévidoir électrique 4 prises" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Chantier</span><span class="tcard-rate">⭐ 4.7</span></div>
+        <h3 class="tcard-name">Dévidoir électrique 4 prises</h3>
+        <p class="tcard-use">Enrouleur 25 m, 4 prises 16 A, disjoncteur thermique, câble H07RN-F 3G1,5, usage extérieur.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">3€</span><span class="u">/ jour</span><div class="from">Caution 20€</div></div>
+          <a href="fiches/enrouleur-electrique-de-chantier.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 21 Robot pâtissier -->
+    <article class="tcard" data-cat="maison" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/robot-patissier-vintage-orange-avec-bol-inox.jpg" alt="Robot pâtissier Klarstein" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Klarstein</span><span class="tcard-rate">⭐ 4.8</span></div>
+        <h3 class="tcard-name">Robot pâtissier Klarstein</h3>
+        <p class="tcard-use">Pétrin, batteur, fouet. Bol inox 5 L, 1200 W, 6 vitesses + pulse, tête relevable, look vintage.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">10€</span><span class="u">/ jour</span><div class="from">Caution 50€</div></div>
+          <a href="fiches/robot-patissier-vintage-orange-avec-bol-inox.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+
+    <!-- 22 Clavier Casio -->
+    <article class="tcard" data-cat="maison" role="listitem">
+      <div class="tcard-img"><img src="images/p/thumb/clavier-arrangeur-casio-wk-1800.jpg" alt="Clavier Casio WK-1800 (76 touches)" width="320" height="240" loading="lazy"></div>
+      <div class="tcard-body">
+        <div class="tcard-top"><span class="tcard-brand">Casio</span><span class="tcard-rate">⭐ 4.7</span></div>
+        <h3 class="tcard-name">Clavier Casio WK-1800 (76 touches)</h3>
+        <p class="tcard-use">76 touches sensitives, 32 notes polyphonie, accompagnements auto, HP intégrés, MIDI, 230 V.</p>
+        <div class="tcard-foot">
+          <div class="tcard-price"><span class="amt">10€</span><span class="u">/ jour</span><div class="from">Caution 60€</div></div>
+          <a href="fiches/clavier-arrangeur-casio-wk-1800.html" class="tcard-cta">Réserver</a>
+        </div>
+        <div class="tcard-caution">Caution remboursée sous 2-5 jours</div>
+      </div>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-trust">
+    <div class="wrap">
+      <div class="foot-trust-grid">
+        <div class="ft"><div class="ft-ic">🛡️</div><div><b>Matériel vérifié</b><span>Contrôle technique avant chaque remise</span></div></div>
+        <div class="ft"><div class="ft-ic">👥</div><div><b>Pro & particuliers</b><span>Conseils inclus à chaque location</span></div></div>
+        <div class="ft"><div class="ft-ic">♻️</div><div><b>Économie circulaire</b><span>Louer plutôt qu'acheter = moins de CO₂</span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-main">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="../index.html" class="logo"><div class="logo-badge">🔧</div><div class="logo-txt"><b>LocOutils</b><span>Pro · Tours</span></div></a>
+          <p>Location d'outils pro à Tours et agglomération. Réservation en 2 minutes, retrait rapide, paiement sécurisé.</p>
+          <div class="foot-contact">
+            <div>📞 <a href="tel:+33744802699">07 44 80 26 99</a></div>
+            <div>✉️ <a href="mailto:locoutils37@gmail.com">locoutils37@gmail.com</a></div>
+            <div>📍 Tours (37) et agglomération</div>
+          </div>
+        </div>
+        <div class="foot-col"><h5>Location</h5><ul>
+          <li><a href="../index.html#catalogue">Catalogue complet</a></li>
+          <li><a href="../index.html#catalogue" onclick="filterTo('percage')">Perçage</a></li>
+          <li><a href="../index.html#catalogue" onclick="filterTo('decoupe')">Découpe</a></li>
+          <li><a href="../index.html#catalogue" onclick="filterTo('poncage')">Ponçage</a></li>
+          <li><a href="../index.html#catalogue" onclick="filterTo('chantier')">Chantier</a></li>
+        </ul></div>
+        <div class="foot-col"><h5>Aide</h5><ul>
+          <li><a href="../index.html#how">Comment ça marche</a></li>
+          <li><a href="../index.html#why">Pourquoi louer</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="https://wa.me/33744802699" target="_blank">Support WhatsApp</a></li>
+          <li><a href="mailto:locoutils37@gmail.com">Contact</a></li>
+        </ul></div>
+        <div class="foot-col"><h5>Zone</h5><ul>
+          <li><a href="../index.html#catalogue">Tours</a></li>
+          <li><a href="../index.html#catalogue">La Riche</a></li>
+          <li><a href="../index.html#catalogue">Saint-Cyr-sur-Loire</a></li>
+          <li><a href="../index.html#catalogue">Joué-lès-Tours</a></li>
+          <li><a href="../index.html#catalogue">Agglomération</a></li>
+        </ul></div>
+        <div class="foot-col"><h5>Légal</h5><ul>
+          <li><a href="../mentions-legales.html">Mentions légales</a></li>
+          <li><a href="../mentions-legales.html">CGV & conditions</a></li>
+          <li><a href="../mentions-legales.html">RGPD & données</a></li>
+          <li><a href="../mentions-legales.html">Politique caution</a></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot-pay">
+    <div class="pay-logos">
+      <span style="background:#1A1F71;color:#fff">VISA</span>
+      <span style="background:#EB001B;color:#fff">Mastercard</span>
+      <span style="background:#000;color:#fff"> Pay</span>
+      <span style="background:#fff;color:#4285F4;border:1px solid #333">G Pay</span>
+      <span style="background:#0070BA;color:#fff">CB</span>
+    </div>
+    <div class="foot-badges">
+      <span>🔒 Paiement sécurisé Stripe</span>
+      <span>🛡️ Certifié PCI DSS</span>
+      <span>✅ Données chiffrées SSL</span>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    © 2025 LocOutils — Entreprise individuelle · SIRET 491 326 492 000 49 · TVA non applicable (art. 293 B du CGI)<br>
+    Paiement exclusivement en ligne · Aucun paiement en espèces · Fait à Tours ❤️
+  </div>
+</footer>
+
+<script>
+// ==================== CATALOGUE PAGE JS ====================
+(function(){
+  'use strict';
+
+  // ----- Mobile menu -----
+  const burger = document.getElementById('burger');
+  const mob = document.getElementById('mob');
+  function closeMob(){ if(mob) mob.classList.remove('open'); }
+  function openMob(){ if(mob) mob.classList.add('open'); }
+  if(burger && mob){
+    burger.addEventListener('click', function(e){ e.stopPropagation(); mob.classList.toggle('open'); });
+    document.addEventListener('click', function(e){ if(mob.classList.contains('open') && !mob.contains(e.target) && e.target !== burger) closeMob(); });
+  }
+
+  // ----- Filter logic -----
+  const filterBtns = document.querySelectorAll('#catFilters .fbtn');
+  const cards = document.querySelectorAll('#toolsGrid .tcard');
+  const resultsCount = document.getElementById('resultsCount');
+
+  function getUrlCat(){
+    const params = new URLSearchParams(window.location.search);
+    return params.get('cat') || 'all';
+  }
+
+  function setActiveCat(cat){
+    filterBtns.forEach(function(btn){
+      var isActive = btn.dataset.cat === cat;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive);
+    });
+  }
+
+  function filterCards(cat){
+    var visible = 0;
+    cards.forEach(function(card){
+      var match = (cat === 'all') || (card.dataset.cat === cat);
+      card.classList.toggle('hidden', !match);
+      if(match) visible++;
+    });
+    if(resultsCount){
+      resultsCount.innerHTML = '<b>' + visible + '</b> outil' + (visible > 1 ? 's' : '') + ' disponible' + (visible > 1 ? 's' : '');
+    }
+  }
+
+  // Init from URL
+  var initialCat = getUrlCat();
+  setActiveCat(initialCat);
+  filterCards(initialCat);
+
+  // Click handlers
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var cat = this.dataset.cat;
+      setActiveCat(cat);
+      filterCards(cat);
+      // Update URL without reload
+      var url = new URL(window.location);
+      if(cat === 'all') url.searchParams.delete('cat'); else url.searchParams.set('cat', cat);
+      window.history.replaceState({}, '', url);
+    });
+    // Keyboard support
+    btn.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' ') btn.click();
+    });
+  });
+
+  // ----- Expose filterTo for footer links from index.html -----
+  window.filterTo = function(cat){
+    var btn = document.querySelector('#catFilters .fbtn[data-cat="' + cat + '"]');
+    if(btn){ btn.click(); }
+    // Scroll to catalogue section
+    var grid = document.getElementById('toolsGrid');
+    if(grid) grid.scrollIntoView({behavior:'smooth', block:'start'});
+  };
+
+})();
+</script>
+</body>
+</html>
