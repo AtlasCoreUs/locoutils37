@@ -1,23 +1,175 @@
 [build]
-  publish = "."
-  functions = "netlify/functions"
-  command = "node build-config.js"
+command = "node build-config.js"
+publish = "."
+functions = "netlify/functions"
 
 [functions]
-  node_bundler = "esbuild"
+node_bundler = "esbuild"
+included_files = ["data/tools.json"]
 
-# La clé anon Supabase est publique par design (row-level security active).
-# On autorise sa présence dans le config.js généré au build.
 [build.environment]
-  SECRETS_SCAN_OMIT_PATHS = "config.js"
+NODE_VERSION = "20"
+SECRETS_SCAN_OMIT_KEYS = "SUPABASE_URL,SUPABASE_ANON_KEY,STRIPE_PUBLIC_KEY,SITE_URL"
+
+[dev]
+command = "node build-config.js"
+publish = "."
+functions = "netlify/functions"
+port = 8888
 
 [[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+for = "/*"
+[headers.values]
+X-Content-Type-Options = "nosniff"
+X-Frame-Options = "DENY"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+Content-Security-Policy = "default-src 'self'; script-src 'self' https://js.stripe.com; frame-src https://js.stripe.com https://hooks.stripe.com; connect-src 'self' https://api.stripe.com https://*.supabase.co; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'self'; form-action 'self' https://checkout.stripe.com; frame-ancestors 'none'"
 
 [[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
+for = "/data/tools.json"
+[headers.values]
+Cache-Control = "public, max-age=300"
+
+[[redirects]]
+from = "/catalogue/fiches/perceuse-visseuse-sans-fil-hikoki-hitachi.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=perceuse-hitachi"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/marteau-perforateur-makita-sds.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=perfo-makita"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/marteau-perforateur-worx-sds.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=perfo-worx"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/scie-a-onglets-evolution.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=scie-onglets"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/scie-sauteuse-makita-en-coffret.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=scie-sauteuse"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/scie-sabre-aeg-filaire.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=scie-sabre"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/coffret-scies-cloches.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=scies-cloches"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/ponceuse-excentrique-bosch-pex.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=ponceuse-bosch"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/ponceuse-a-bande-rouge.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=ponceuse-bande"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/rabot-electrique-bosch.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=rabot-bosch"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/defonceuse-ryobi-bleue.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=defonceuse"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/outil-multifonction-fein.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=multi-fein"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/compresseur-mecafer-avec-flexible-et-coffret.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=compresseur"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/poste-a-souder-bleu.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=poste-souder"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/meuleuse-d-angle-en-mallette.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=meuleuse"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/aspirateur-eau-et-poussieres-karcher-wd-6-p.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=karcher"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/etau-d-etabli.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=etau"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/lot-de-serre-joints-presses-de-serrage.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=serre-joints"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/jeu-de-cles-mixtes.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=cles"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/enrouleur-electrique-de-chantier.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=devidoir"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/robot-patissier-vintage-orange-avec-bol-inox.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=robot-klarstein"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/clavier-arrangeur-casio-wk-1800.html"
+to = "/catalogue/fiches/dynamic/template.html?tool=clavier-casio"
+status = 200
+force = true
+
+[[redirects]]
+from = "/catalogue/fiches/*"
+to = "/404.html"
+status = 404
+
+[[redirects]]
+from = "/*"
+to = "/404.html"
+status = 404
+
