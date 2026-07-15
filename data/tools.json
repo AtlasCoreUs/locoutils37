@@ -1,0 +1,426 @@
+[
+  {
+    "id": "perceuse-hitachi",
+    "slug": "perceuse-visseuse-sans-fil-hikoki-hitachi",
+    "name": "Perceuse visseuse Hitachi 18V",
+    "brand": "Hitachi / Hikoki",
+    "category": "percage",
+    "icon": "⚙",
+    "short": "Perçage et vissage courant, montage de meubles et petits travaux.",
+    "prices": {
+      "demi": 500,
+      "jour": 900,
+      "we": 1600,
+      "semaine": 2700
+    },
+    "caution": 6000,
+    "popular": true,
+    "image": "/catalogue/images/p/thumb/perceuse-visseuse-sans-fil-hikoki-hitachi.jpg",
+    "url": "/catalogue/fiches/perceuse-visseuse-sans-fil-hikoki-hitachi.html",
+    "fallbackImage": "/assets/images/tools/perceuse-hitachi.svg"
+  },
+  {
+    "id": "perfo-makita",
+    "slug": "marteau-perforateur-makita-sds",
+    "name": "Perforateur SDS Makita HR2470",
+    "brand": "Makita",
+    "category": "percage",
+    "icon": "◆",
+    "short": "Béton, pierre et maçonnerie avec modes perçage, percussion et burinage.",
+    "prices": {
+      "demi": 800,
+      "jour": 1500,
+      "we": 2600,
+      "semaine": 4500
+    },
+    "caution": 10000,
+    "popular": true,
+    "image": "/catalogue/images/p/thumb/marteau-perforateur-makita-sds.jpg",
+    "url": "/catalogue/fiches/marteau-perforateur-makita-sds.html",
+    "fallbackImage": "/assets/images/tools/perfo-makita.svg"
+  },
+  {
+    "id": "perfo-worx",
+    "slug": "marteau-perforateur-worx-sds",
+    "name": "Perforateur SDS Worx",
+    "brand": "Worx",
+    "category": "percage",
+    "icon": "◆",
+    "short": "Perforateur polyvalent pour chevilles, murs et petits travaux de démolition.",
+    "prices": {
+      "demi": 700,
+      "jour": 1200,
+      "we": 2000,
+      "semaine": 3600
+    },
+    "caution": 8000,
+    "image": "/catalogue/images/p/thumb/marteau-perforateur-worx-sds.jpg",
+    "url": "/catalogue/fiches/marteau-perforateur-worx-sds.html",
+    "fallbackImage": "/assets/images/tools/perfo-worx.svg"
+  },
+  {
+    "id": "scie-onglets",
+    "slug": "scie-a-onglets-evolution",
+    "name": "Scie à onglets Evolution",
+    "brand": "Evolution",
+    "category": "decoupe",
+    "icon": "◢",
+    "short": "Coupes droites et d’angle pour tasseaux, plinthes, parquet et menuiserie.",
+    "prices": {
+      "demi": 1000,
+      "jour": 1800,
+      "we": 3000,
+      "semaine": 5400
+    },
+    "caution": 12000,
+    "popular": true,
+    "image": "/catalogue/images/p/thumb/scie-a-onglets-evolution.jpg",
+    "url": "/catalogue/fiches/scie-a-onglets-evolution.html",
+    "fallbackImage": "/assets/images/tools/scie-onglets.svg"
+  },
+  {
+    "id": "scie-sauteuse",
+    "slug": "scie-sauteuse-makita-en-coffret",
+    "name": "Scie sauteuse Makita",
+    "brand": "Makita",
+    "category": "decoupe",
+    "icon": "⌁",
+    "short": "Découpes courbes ou droites dans le bois et panneaux.",
+    "prices": {
+      "demi": 500,
+      "jour": 900,
+      "we": 1600,
+      "semaine": 2700
+    },
+    "caution": 5000,
+    "image": "/catalogue/images/p/thumb/scie-sauteuse-makita-en-coffret.jpg",
+    "url": "/catalogue/fiches/scie-sauteuse-makita-en-coffret.html",
+    "fallbackImage": "/assets/images/tools/scie-sauteuse.svg"
+  },
+  {
+    "id": "scie-sabre",
+    "slug": "scie-sabre-aeg-filaire",
+    "name": "Scie sabre AEG",
+    "brand": "AEG",
+    "category": "decoupe",
+    "icon": "╱",
+    "short": "Découpe rapide de bois, tubes et matériaux de chantier avec lame adaptée.",
+    "prices": {
+      "demi": 600,
+      "jour": 1000,
+      "we": 1800,
+      "semaine": 3000
+    },
+    "caution": 6000,
+    "image": "/catalogue/images/p/thumb/scie-sabre-aeg-filaire.jpg",
+    "url": "/catalogue/fiches/scie-sabre-aeg-filaire.html",
+    "fallbackImage": "/assets/images/tools/scie-sabre.svg"
+  },
+  {
+    "id": "scies-cloches",
+    "slug": "coffret-scies-cloches",
+    "name": "Kit scies cloches bimétal",
+    "brand": "Coffret complet",
+    "category": "decoupe",
+    "icon": "○",
+    "short": "Percements circulaires pour prises, spots, gaines et passages techniques.",
+    "prices": {
+      "demi": 400,
+      "jour": 600,
+      "we": 1000,
+      "semaine": 1800
+    },
+    "caution": 3000,
+    "image": "/catalogue/images/p/thumb/coffret-scies-cloches.jpg",
+    "url": "/catalogue/fiches/coffret-scies-cloches.html",
+    "fallbackImage": "/assets/images/tools/scies-cloches.svg"
+  },
+  {
+    "id": "ponceuse-bosch",
+    "slug": "ponceuse-excentrique-bosch-pex",
+    "name": "Ponceuse excentrique Bosch PEX 300 AE",
+    "brand": "Bosch",
+    "category": "poncage",
+    "icon": "◎",
+    "short": "Finition de meubles, volets, portes et surfaces planes ou galbées.",
+    "prices": {
+      "demi": 500,
+      "jour": 800,
+      "we": 1400,
+      "semaine": 2400
+    },
+    "caution": 5000,
+    "popular": true,
+    "image": "/catalogue/images/p/thumb/ponceuse-excentrique-bosch-pex.jpg",
+    "url": "/catalogue/fiches/ponceuse-excentrique-bosch-pex.html",
+    "fallbackImage": "/assets/images/tools/ponceuse-bosch.svg"
+  },
+  {
+    "id": "ponceuse-bande",
+    "slug": "ponceuse-a-bande-rouge",
+    "name": "Ponceuse à bande",
+    "brand": "Modèle filaire",
+    "category": "poncage",
+    "icon": "▱",
+    "short": "Décapage énergique et ponçage de grandes surfaces en bois.",
+    "prices": {
+      "demi": 500,
+      "jour": 800,
+      "we": 1400,
+      "semaine": 2400
+    },
+    "caution": 5000,
+    "image": "/catalogue/images/p/thumb/ponceuse-a-bande-rouge.jpg",
+    "url": "/catalogue/fiches/ponceuse-a-bande-rouge.html",
+    "fallbackImage": "/assets/images/tools/ponceuse-bande.svg"
+  },
+  {
+    "id": "rabot-bosch",
+    "slug": "rabot-electrique-bosch",
+    "name": "Rabot électrique Bosch",
+    "brand": "Bosch",
+    "category": "poncage",
+    "icon": "▰",
+    "short": "Ajustage de portes, chants et planches avec enlèvement régulier de matière.",
+    "prices": {
+      "demi": 500,
+      "jour": 800,
+      "we": 1400,
+      "semaine": 2400
+    },
+    "caution": 5000,
+    "image": "/catalogue/images/p/thumb/rabot-electrique-bosch.jpg",
+    "url": "/catalogue/fiches/rabot-electrique-bosch.html",
+    "fallbackImage": "/assets/images/tools/rabot-bosch.svg"
+  },
+  {
+    "id": "defonceuse",
+    "slug": "defonceuse-ryobi-bleue",
+    "name": "Défonceuse Ryobi 1500W",
+    "brand": "Ryobi",
+    "category": "poncage",
+    "icon": "⌄",
+    "short": "Rainures, feuillures, moulures et travail précis du bois.",
+    "prices": {
+      "demi": 800,
+      "jour": 1500,
+      "we": 2600,
+      "semaine": 4500
+    },
+    "caution": 10000,
+    "image": "/catalogue/images/p/thumb/defonceuse-ryobi-bleue.jpg",
+    "url": "/catalogue/fiches/defonceuse-ryobi-bleue.html",
+    "fallbackImage": "/assets/images/tools/defonceuse.svg"
+  },
+  {
+    "id": "multi-fein",
+    "slug": "outil-multifonction-fein",
+    "name": "Outil multifonction Fein",
+    "brand": "Fein",
+    "category": "decoupe",
+    "icon": "✦",
+    "short": "Découpe affleurante, grattage et ponçage dans les zones difficiles d’accès.",
+    "prices": {
+      "demi": 700,
+      "jour": 1200,
+      "we": 2000,
+      "semaine": 3600
+    },
+    "caution": 8000,
+    "image": "/catalogue/images/p/thumb/outil-multifonction-fein.jpg",
+    "url": "/catalogue/fiches/outil-multifonction-fein.html",
+    "fallbackImage": "/assets/images/tools/multi-fein.svg"
+  },
+  {
+    "id": "compresseur",
+    "slug": "compresseur-mecafer-avec-flexible-et-coffret",
+    "name": "Compresseur Mecafer Twenty 24L",
+    "brand": "Mecafer",
+    "category": "chantier",
+    "icon": "◉",
+    "short": "Gonflage, soufflage et petits outils pneumatiques avec accessoires.",
+    "prices": {
+      "demi": 1000,
+      "jour": 1800,
+      "we": 3000,
+      "semaine": 5400
+    },
+    "caution": 12000,
+    "popular": true,
+    "image": "/catalogue/images/p/thumb/compresseur-mecafer-avec-flexible-et-coffret.jpg",
+    "url": "/catalogue/fiches/compresseur-mecafer-avec-flexible-et-coffret.html",
+    "fallbackImage": "/assets/images/tools/compresseur.svg"
+  },
+  {
+    "id": "poste-souder",
+    "slug": "poste-a-souder-bleu",
+    "name": "Poste à souder",
+    "brand": "Modèle à l’arc",
+    "category": "chantier",
+    "icon": "⌁",
+    "short": "Petites réparations métalliques et assemblages avec équipement adapté.",
+    "prices": {
+      "demi": 1000,
+      "jour": 1800,
+      "we": 3000,
+      "semaine": 5400
+    },
+    "caution": 10000,
+    "image": "/catalogue/images/p/thumb/poste-a-souder-bleu.jpg",
+    "url": "/catalogue/fiches/poste-a-souder-bleu.html",
+    "fallbackImage": "/assets/images/tools/poste-souder.svg"
+  },
+  {
+    "id": "meuleuse",
+    "slug": "meuleuse-d-angle-en-mallette",
+    "name": "Meuleuse d’angle Titan 115 mm",
+    "brand": "Titan",
+    "category": "chantier",
+    "icon": "◍",
+    "short": "Découpe et ébarbage du métal ou de la maçonnerie avec disque adapté.",
+    "prices": {
+      "demi": 500,
+      "jour": 800,
+      "we": 1400,
+      "semaine": 2400
+    },
+    "caution": 5000,
+    "image": "/catalogue/images/p/thumb/meuleuse-d-angle-en-mallette.jpg",
+    "url": "/catalogue/fiches/meuleuse-d-angle-en-mallette.html",
+    "fallbackImage": "/assets/images/tools/meuleuse.svg"
+  },
+  {
+    "id": "karcher",
+    "slug": "aspirateur-eau-et-poussieres-karcher-wd-6-p",
+    "name": "Aspirateur Kärcher WD 6 P 30L",
+    "brand": "Kärcher",
+    "category": "chantier",
+    "icon": "◒",
+    "short": "Aspiration eau et poussières pour chantier, garage et nettoyage intensif.",
+    "prices": {
+      "demi": 800,
+      "jour": 1400,
+      "we": 2400,
+      "semaine": 4200
+    },
+    "caution": 10000,
+    "popular": true,
+    "image": "/catalogue/images/p/thumb/aspirateur-eau-et-poussieres-karcher-wd-6-p.jpg",
+    "url": "/catalogue/fiches/aspirateur-eau-et-poussieres-karcher-wd-6-p.html",
+    "fallbackImage": "/assets/images/tools/karcher.svg"
+  },
+  {
+    "id": "etau",
+    "slug": "etau-d-etabli",
+    "name": "Étau d’établi",
+    "brand": "Outil d’atelier",
+    "category": "main",
+    "icon": "⊣",
+    "short": "Maintien stable de pièces pour découpe, perçage, limage ou assemblage.",
+    "prices": {
+      "demi": 300,
+      "jour": 400,
+      "we": 700,
+      "semaine": 1200
+    },
+    "caution": 3000,
+    "image": "/catalogue/images/p/thumb/etau-d-etabli.jpg",
+    "url": "/catalogue/fiches/etau-d-etabli.html",
+    "fallbackImage": "/assets/images/tools/etau.svg"
+  },
+  {
+    "id": "serre-joints",
+    "slug": "lot-de-serre-joints-presses-de-serrage",
+    "name": "Serre-joints — lot de 5",
+    "brand": "Lot atelier",
+    "category": "main",
+    "icon": "⊢",
+    "short": "Serrage de panneaux, collages, assemblages et maintien temporaire.",
+    "prices": {
+      "demi": 300,
+      "jour": 400,
+      "we": 700,
+      "semaine": 1200
+    },
+    "caution": 3000,
+    "image": "/catalogue/images/p/thumb/lot-de-serre-joints-presses-de-serrage.jpg",
+    "url": "/catalogue/fiches/lot-de-serre-joints-presses-de-serrage.html",
+    "fallbackImage": "/assets/images/tools/serre-joints.svg"
+  },
+  {
+    "id": "cles",
+    "slug": "jeu-de-cles-mixtes",
+    "name": "Jeu de clés mixtes",
+    "brand": "Coffret mécanique",
+    "category": "main",
+    "icon": "⌕",
+    "short": "Serrage et desserrage d’écrous pour mécanique, plomberie et montage.",
+    "prices": {
+      "demi": 200,
+      "jour": 300,
+      "we": 500,
+      "semaine": 900
+    },
+    "caution": 2000,
+    "image": "/catalogue/images/p/thumb/jeu-de-cles-mixtes.jpg",
+    "url": "/catalogue/fiches/jeu-de-cles-mixtes.html",
+    "fallbackImage": "/assets/images/tools/cles.svg"
+  },
+  {
+    "id": "devidoir",
+    "slug": "enrouleur-electrique-de-chantier",
+    "name": "Enrouleur électrique 4 prises",
+    "brand": "Équipement chantier",
+    "category": "chantier",
+    "icon": "@",
+    "short": "Alimentation électrique sécurisée et pratique à distance.",
+    "prices": {
+      "demi": 200,
+      "jour": 300,
+      "we": 500,
+      "semaine": 900
+    },
+    "caution": 2000,
+    "image": "/catalogue/images/p/thumb/enrouleur-electrique-de-chantier.jpg",
+    "url": "/catalogue/fiches/enrouleur-electrique-de-chantier.html",
+    "fallbackImage": "/assets/images/tools/devidoir.svg"
+  },
+  {
+    "id": "robot-klarstein",
+    "slug": "robot-patissier-vintage-orange-avec-bol-inox",
+    "name": "Robot pâtissier Klarstein",
+    "brand": "Klarstein",
+    "category": "maison",
+    "icon": "◜",
+    "short": "Pétrissage, fouettage et préparations pâtissières avec bol inox.",
+    "prices": {
+      "demi": 600,
+      "jour": 1000,
+      "we": 1800,
+      "semaine": 3000
+    },
+    "caution": 5000,
+    "image": "/catalogue/images/p/thumb/robot-patissier-vintage-orange-avec-bol-inox.jpg",
+    "url": "/catalogue/fiches/robot-patissier-vintage-orange-avec-bol-inox.html",
+    "fallbackImage": "/assets/images/tools/robot-klarstein.svg"
+  },
+  {
+    "id": "clavier-casio",
+    "slug": "clavier-arrangeur-casio-wk-1800",
+    "name": "Clavier Casio WK-1800 — 76 touches",
+    "brand": "Casio",
+    "category": "maison",
+    "icon": "▥",
+    "short": "Clavier arrangeur pour répétition, événement ou découverte musicale.",
+    "prices": {
+      "demi": 600,
+      "jour": 1000,
+      "we": 1800,
+      "semaine": 3000
+    },
+    "caution": 6000,
+    "image": "/catalogue/images/p/thumb/clavier-arrangeur-casio-wk-1800.jpg",
+    "url": "/catalogue/fiches/clavier-arrangeur-casio-wk-1800.html",
+    "fallbackImage": "/assets/images/tools/clavier-casio.svg"
+  }
+]

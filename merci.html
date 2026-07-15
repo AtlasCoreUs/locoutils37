@@ -1,46 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Réservation confirmée — LocOutils Tours</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#0E1420;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{background:#161E2E;border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:44px 38px;max-width:520px;width:100%;text-align:center}
-.check{width:78px;height:78px;background:#10B981;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-size:38px;color:#fff;animation:pop .5s ease}
-@keyframes pop{0%{transform:scale(0)}60%{transform:scale(1.15)}100%{transform:scale(1)}}
-h1{font-family:'Bebas Neue',sans-serif;font-size:46px;color:#fff;margin-bottom:8px;font-weight:400}
-.sub{font-size:15px;color:#94A3B8;margin-bottom:30px}
-.steps{text-align:left;margin-bottom:28px}
-.step{display:flex;gap:15px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06)}
-.step:last-child{border:none}
-.n{width:30px;height:30px;background:#FF6B00;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;flex-shrink:0}
-.t{font-size:13.5px;color:#CBD5E1;line-height:1.5}
-.t b{display:block;color:#fff;margin-bottom:2px}
-.btns{display:flex;flex-direction:column;gap:10px}
-.btn{padding:14px 24px;border-radius:12px;font-weight:700;font-size:14.5px;border:none;cursor:pointer;font-family:inherit;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
-.btn-wa{background:#25D366;color:#fff}.btn-wa:hover{background:#1da851}
-.btn-home{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15)}
-.btn-home:hover{background:rgba(255,255,255,.14)}
-</style>
-</head>
-<body>
-<div class="card">
-  <div class="check">✓</div>
-  <h1>Réservation confirmée !</h1>
-  <p class="sub">Votre paiement a été reçu. Voici la suite :</p>
-  <div class="steps">
-    <div class="step"><div class="n">1</div><div class="t"><b>📧 Email de confirmation</b>Un récapitulatif Stripe arrive dans votre boîte mail dans les prochaines minutes.</div></div>
-    <div class="step"><div class="n">2</div><div class="t"><b>📍 Point de rendez-vous</b>On vous contacte sous 1h par SMS/WhatsApp pour fixer le lieu et l'heure de retrait (lieu public, simple et sécurisé).</div></div>
-    <div class="step"><div class="n">3</div><div class="t"><b>🔧 Retrait de l'outil</b>Vérifié et testé avant remise. Photos d'état ensemble (15 sec). On vous explique le fonctionnement si besoin.</div></div>
-    <div class="step"><div class="n">4</div><div class="t"><b>💰 Caution remboursée au retour</b>Outil rendu en bon état → caution remboursée sous 2-5 jours ouvrés.</div></div>
-  </div>
-  <div class="btns">
-    <a href="https://wa.me/33744802699?text=Bonjour%20!%20Je%20viens%20de%20réserver%20un%20outil%20sur%20LocOutils.%20Quand%20puis-je%20le%20récupérer%20%3F" class="btn btn-wa" target="_blank">💬 Fixer le retrait sur WhatsApp</a>
-    <a href="/" class="btn btn-home">← Retour au site</a>
-  </div>
-</div>
-</body>
-</html>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Réservation — LOCOUTILS37</title><meta name="robots" content="noindex"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/css/styles.css"><script src="https://js.stripe.com/v3/"></script><script src="/assets/js/config.js"></script><script defer src="/assets/js/merci.js"></script></head><body>
+<div class="topbar"><div class="container"><span>📍 Retrait à La Riche / Tours — adresse exacte après paiement</span><span>07 44 80 26 99 · locoutils37@gmail.com</span></div></div>
+<nav class="nav"><div class="container nav-inner"><a class="brand" href="/"><span class="brand-mark">🔧</span><span>LOCOUTILS37<small>LOCATION D’OUTILS · TOURS</small></span></a><div class="nav-links"><a href="/catalogue/">Les outils</a><a href="/#fonctionnement">Comment ça marche</a><a href="/#caution">Caution</a><a class="btn btn-primary" href="/catalogue/">Réserver</a></div><button class="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button></div></nav>
+<div class="nav-mobile"><a href="/catalogue/">Les outils</a><a href="/#fonctionnement">Comment ça marche</a><a href="/#caution">Caution</a></div>
+<main><section class="section"><div class="container" style="max-width:760px"><div class="product-panel"><div data-loading class="loading">Vérification de la réservation…</div><div data-error class="status-box error hidden"></div><div data-confirmation class="hidden"><span class="eyebrow">Réservation enregistrée</span><h1 style="font-size:46px">Merci.</h1><div class="summary-line"><span>Outil</span><b data-tool></b></div><div class="summary-line"><span>Période</span><b data-dates></b></div><div class="summary-line"><span>Location</span><b data-location-price></b></div><div class="summary-line"><span>Statut</span><b data-payment-status></b></div><div data-deposit-zone><div class="deposit-box"><b>Caution prévue : <span data-deposit></span></b><p>Cette caution n’a pas été débitée avec la location. Elle doit être autorisée séparément.</p></div><div data-deposit-setup class="hidden"><button data-start-deposit class="btn btn-primary">Autoriser la caution maintenant</button></div><form data-deposit-form class="hidden"><div id="payment-element" class="payment-element"></div><button class="btn btn-primary" style="width:100%;margin-top:16px">Confirmer l’empreinte bancaire</button></form></div><div class="notice" style="margin-top:22px">L’adresse exacte et le créneau de retrait sont confirmés par email ou téléphone. Présentez une pièce d’identité originale au retrait.</div></div></div></div></section></main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="/"><span class="brand-mark">🔧</span><span>LOCOUTILS37<small>LOCATION D’OUTILS · TOURS</small></span></a><p>Location locale, paiement sécurisé et réservation en ligne. Pièce d’identité vérifiée visuellement au retrait, sans copie conservée par le site.</p></div><div><b>Navigation</b><ul><li><a href="/catalogue/">Catalogue</a></li><li><a href="/merci.html">Suivi réservation</a></li><li><a href="mailto:locoutils37@gmail.com">Contact</a></li></ul></div><div><b>Légal</b><ul><li><a href="/mentions-legales.html">Mentions, CGV & RGPD</a></li><li><a href="/sitemap.xml">Plan du site</a></li></ul></div></div><div class="footer-bottom">© 2026 LOCOUTILS37 · Tours Métropole · Paiements sécurisés par Stripe</div></div></footer>
+</body></html>
