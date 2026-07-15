@@ -8,7 +8,7 @@ node_bundler = "esbuild"
 included_files = ["data/tools.json"]
 
 [build.environment]
-NODE_VERSION = "20"
+NODE_VERSION = "20"`r`nSECRETS_SCAN_OMIT_KEYS = "SUPABASE_URL,SUPABASE_ANON_KEY,STRIPE_PUBLIC_KEY,SITE_URL"
 
 [dev]
 command = "node build-config.js"
@@ -171,3 +171,4 @@ status = 404
 from = "/*"
 to = "/404.html"
 status = 404
+
