@@ -8,7 +8,8 @@ node_bundler = "esbuild"
 included_files = ["data/tools.json"]
 
 [build.environment]
-NODE_VERSION = "20"`r`nSECRETS_SCAN_OMIT_KEYS = "SUPABASE_URL,SUPABASE_ANON_KEY,STRIPE_PUBLIC_KEY,SITE_URL"
+NODE_VERSION = "20"
+SECRETS_SCAN_OMIT_KEYS = "SUPABASE_URL,SUPABASE_ANON_KEY,STRIPE_PUBLIC_KEY,SITE_URL"
 
 [dev]
 command = "node build-config.js"
