@@ -78,6 +78,11 @@ nav{position:sticky;top:0;z-index:200;background:var(--ink);border-bottom:1px so
 .hv-info .b{font-size:10px;color:#FFB380;font-weight:700;text-transform:uppercase}
 .hv-info .n{font-size:14px;font-weight:700;margin:1px 0 2px}
 .hv-info .p b{color:var(--orange);font-size:16px}
+.hv-info .b,
+.hv-info .n,
+.hv-info .p{
+  display:block;
+}
 .stats{background:var(--ink);padding:0 0 56px}
 .stats-in{background:var(--ink-2);border:1px solid var(--line-dark);border-radius:var(--r-lg);padding:34px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .stat{text-align:center;position:relative}
@@ -373,27 +378,50 @@ footer{background:#0A0F18;color:#94A3B8}
         </div>
       </div>
       <div class="hero-visual" id="heroVisual">
-        <a href="catalogue/fiches/perceuse-visseuse-sans-fil-hikoki-hitachi.html" class="hv-card big" style="grid-column:1;grid-row:1/3">
-          <img src="images/p/thumb/perceuse-visseuse-sans-fil-hikoki-hitachi.jpg" alt="Perceuse-visseuse Hitachi 18V" loading="eager">
-          <span class="hv-tag">Perçage</span>
-          <div class="hv-info"><span class="b">Perceuse-visseuse</span><span class="n">Hitachi 18V</span><span class="p"><b>9€</b>/jour</span></div>
-        </a>
-        <a href="catalogue/fiches/scie-a-onglets-evolution.html" class="hv-card" style="grid-column:2;grid-row:1">
-          <img src="images/p/thumb/scie-a-onglets-evolution.jpg" alt="Scie à onglets Evolution" loading="eager">
-          <span class="hv-tag">Découpe</span>
-          <div class="hv-info"><span class="b">Scie à onglets</span><span class="n">Evolution</span><span class="p"><b>18€</b>/jour</span></div>
-        </a>
-        <a href="catalogue/fiches/ponceuse-excentrique-bosch-pex.html" class="hv-card" style="grid-column:2;grid-row:2">
-          <img src="images/p/thumb/ponceuse-excentrique-bosch-pex.jpg" alt="Ponceuse excentrique Bosch PEX 300 AE" loading="eager">
-          <span class="hv-tag">Ponçage</span>
-          <div class="hv-info"><span class="b">Ponceuse excentrique</span><span class="n">Bosch PEX 300 AE</span><span class="p"><b>8€</b>/jour</span></div>
-        </a>
-        <a href="catalogue/fiches/compresseur-mecafer-avec-flexible-et-coffret.html" class="hv-card" style="grid-column:1;grid-row:3">
-          <img src="images/p/thumb/compresseur-mecafer-avec-flexible-et-coffret.jpg" alt="Compresseur Mecafer Twenty 24L" loading="eager">
-          <span class="hv-tag">Chantier</span>
-          <div class="hv-info"><span class="b">Compresseur</span><span class="n">Mecafer 24L</span><span class="p"><b>18€</b>/jour</span></div>
-        </a>
-      </div>
+
+  <a href="catalogue/fiches/perceuse-visseuse-sans-fil-hikoki-hitachi.html"
+     class="hv-card big">
+    <img
+      src="catalogue/images/p/thumb/perceuse-visseuse-sans-fil-hikoki-hitachi.jpg"
+      alt="Perceuse-visseuse Hitachi 18V"
+      loading="eager">
+    <span class="hv-tag">Perçage</span>
+    <div class="hv-info">
+      <span class="b">Perceuse-visseuse</span>
+      <span class="n">Hitachi 18V</span>
+      <span class="p"><b>9€</b>/jour</span>
+    </div>
+  </a>
+
+  <a href="catalogue/fiches/scie-a-onglets-evolution.html"
+     class="hv-card">
+    <img
+      src="catalogue/images/p/thumb/scie-a-onglets-evolution.jpg"
+      alt="Scie à onglets Evolution"
+      loading="eager">
+    <span class="hv-tag">Découpe</span>
+    <div class="hv-info">
+      <span class="b">Scie à onglets</span>
+      <span class="n">Evolution</span>
+      <span class="p"><b>18€</b>/jour</span>
+    </div>
+  </a>
+
+  <a href="catalogue/fiches/ponceuse-excentrique-bosch-pex.html"
+     class="hv-card">
+    <img
+      src="catalogue/images/p/thumb/ponceuse-excentrique-bosch-pex.jpg"
+      alt="Ponceuse excentrique Bosch PEX 300 AE"
+      loading="eager">
+    <span class="hv-tag">Ponçage</span>
+    <div class="hv-info">
+      <span class="b">Ponceuse excentrique</span>
+      <span class="n">Bosch PEX 300 AE</span>
+      <span class="p"><b>8€</b>/jour</span>
+    </div>
+  </a>
+
+</div>
     </div>
   </div>
 </header>
